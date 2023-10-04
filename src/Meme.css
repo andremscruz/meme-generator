@@ -34,3 +34,11 @@ main{
     border: 1px solid white;
     border-radius: 5px;
 }
+.meme--image{
+    max-width: 100%;
+    border-radius: 2px;
+    margin-top: 76px;
+    align-self: center;
+    box-shadow: 10px 10px 20px grey;
+    align-self: center;
+}
