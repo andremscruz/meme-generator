@@ -18,6 +18,14 @@ function Meme(){
         const url = memesArray[randomNumber].url
         setMeme(prevState => ({...prevState, randomImage: url}))
     }  
+
+    function handleChange(event){
+        const {name, value} = event.target
+        setMeme(prevMeme=> ({
+            ...prevMeme,
+            [name]: value
+        }))
+    }
     return(
         <main>
             <div className = "form">
@@ -25,11 +33,17 @@ function Meme(){
                     type = "text" 
                     className = "form--inputs"
                     placeholder = "Top text"
+                    name="topText"
+                    onChange={handleChange}
+                    value={meme.topText}
                 />
                 <input 
                     type = "text" 
                     className = "form--inputs"
                     placeholder = "Bottom text"
+                    name="bottomText"
+                    onChange={handleChange}
+                    value={meme.bottomText}
                 />
                 <button 
                     className = "form--button"
@@ -38,7 +52,11 @@ function Meme(){
                     Get a new meme image 🖼
                 </button>
             </div>
-            <img alt="" src = {meme.randomImage} className="meme--image"/>
+            <div className="meme">
+                <img src={meme.randomImage} className="meme--image" />
+                <h2 className="meme--text top">{meme.topText}</h2>
+                <h2 className="meme--text bottom">{meme.bottomText}</h2>
+            </div>
 
         </main>
     )
