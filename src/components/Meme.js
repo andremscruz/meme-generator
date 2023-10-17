@@ -10,7 +10,7 @@ function Meme(){
         randomImage:"http://i.imgflip.com/1bij.jpg" 
     })
 
-    const [allMemeImages, setAllMemeImages] = useState(memesData)
+    const [allMemeImages] = useState(memesData)
     
     function handleClick(){
         const memesArray = allMemeImages.data.memes
@@ -53,7 +53,7 @@ function Meme(){
                 </button>
             </div>
             <div className="meme">
-                <img src={meme.randomImage} className="meme--image" />
+                <img alt="" src={meme.randomImage} className="meme--image" />
                 <h2 className="meme--text top">{meme.topText}</h2>
                 <h2 className="meme--text bottom">{meme.bottomText}</h2>
             </div>
